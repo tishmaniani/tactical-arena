@@ -1,17 +1,32 @@
+
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private UnitData _data;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private Vector2 _moveInput;
+
+    private void OnMove(InputValue value)
+    {
+        _moveInput = value.Get<Vector2>();
+    }
+
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        Move();
     }
+    private void Move()
+    {
+        Vector3 movement = new Vector3(_moveInput.x, 0, _moveInput.y) * _data.Speed * Time.deltaTime;
+        transform.Translate(movement);
+    }
+
 }

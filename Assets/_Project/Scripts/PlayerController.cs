@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _moveInput;
 
-    private void OnMove(InputValue value)
+    private void OnMove(InputValue value) 
     {
         _moveInput = value.Get<Vector2>();
     }
 
+// InputValue value - Это специальный «контейнер» (объект-обертка), который Unity присылает вместе с событием. Внутри него лежат данные о нажатии.
 
     void Start()
     {

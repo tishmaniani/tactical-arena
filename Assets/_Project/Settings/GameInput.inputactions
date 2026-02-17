@@ -1,6 +1,23 @@
 {
-    "version": 0,
+    "version": 1,
     "name": "GameInput",
-    "maps": [],
+    "maps": [
+        {
+            "name": "Move",
+            "id": "af462be9-d468-44d3-a079-8981d71819ec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "3faf3f26-4a3b-443d-b61a-5a60725249ba",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": []
+        }
+    ],
     "controlSchemes": []
 }

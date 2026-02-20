@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 110354449102659552}
   - component: {fileID: 6959185710063427529}
   - component: {fileID: 81482202916642426}
+  - component: {fileID: -8258909903503582360}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3718939605332330102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.273019, y: 0.93, z: 16.157352}
+  m_LocalPosition: {x: -3.99115, y: -1.29548, z: 11.3269}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,3 +165,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   _data: {fileID: 11400000, guid: b4802ac6bc83e9f43a9196a74e8699e7, type: 2}
+--- !u!114 &-8258909903503582360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3718939605332330102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9cdff52af218ac499d04d572f1aab44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _dataEnemy: {fileID: 11400000, guid: b4802ac6bc83e9f43a9196a74e8699e7, type: 2}

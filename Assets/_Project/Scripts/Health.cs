@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
     {
         _currentHealth -= damage;
 
-        Debug.Log($"{gameObject.name} получил урон. ХП: {_currentHealth}");
+      //  Debug.Log($"{gameObject.name} получил урон. ХП: {_currentHealth}");
 
         if (_currentHealth <= 0)
         {

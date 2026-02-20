@@ -1,5 +1,3 @@
-
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private UnitData _data;
 
     [SerializeField] private GameObject _prefabBullet;
-    [SerializeField] private Transform _muzzle;
+    [SerializeField] private Transform _firePoint;
 
 
 
@@ -82,8 +80,8 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(_prefabBullet, _muzzle.position, _muzzle.rotation);
-        Debug.Log(_muzzle.position);
+        Instantiate(_prefabBullet, _firePoint.position, _firePoint.rotation);
+
     }
 
 }

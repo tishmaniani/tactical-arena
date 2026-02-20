@@ -1,10 +1,17 @@
 
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private UnitData _data;
+
+    [SerializeField] private GameObject _prefabBullet;
+    [SerializeField] private Transform _muzzle;
+
+
+
 
     private Vector2 _moveInput;
     private Vector2 _mousePosition;
@@ -13,6 +20,14 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         _mainCamera = Camera.main; //Кэшируем камеру для производительности   
+    }
+
+    public void OnFire(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            Shoot();
+        }
     }
 
     public void OnMove(InputValue value)
@@ -48,12 +63,6 @@ public class PlayerController : MonoBehaviour
     private void HandleRotation()
     {
         Ray ray = _mainCamera.ScreenPointToRay(_mousePosition);
-        
-        Debug.DrawRay(ray.origin, ray.direction, Color.red);
-
-
-        Debug.Log(ray.origin);
-        Debug.Log(ray.direction);
 
         Plane groundPlane = new Plane(Vector3.up, transform.position);
 
@@ -69,6 +78,12 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.LookRotation(lookDirection);
             }
         }
+    }
+
+    private void Shoot()
+    {
+        Instantiate(_prefabBullet, _muzzle.position, _muzzle.rotation);
+        Debug.Log(_muzzle.position);
     }
 
 }

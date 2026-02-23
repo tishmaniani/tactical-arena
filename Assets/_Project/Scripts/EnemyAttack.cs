@@ -10,7 +10,6 @@ public class EnemyAttack : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-        Debug.Log("Работает??");
             if(Time.time >= _lastAttackTime + _attackCooldown)
             {
                 Health playerHealth = collision.gameObject.GetComponent<Health>();
@@ -18,8 +17,6 @@ public class EnemyAttack : MonoBehaviour
                 if(playerHealth != null)
                 {
                     playerHealth.TakeDamage(_dataEnemy.Damage);
-
-
                     _lastAttackTime = Time.time;
                     Debug.Log("Враг укусил игрока");
                 }
